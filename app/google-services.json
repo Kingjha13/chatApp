@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "316033688504",
+    "project_id": "animationdemo-464cc",
+    "storage_bucket": "animationdemo-464cc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316033688504:android:e53eb4e9b7d97d1bdbe54d",
+        "android_client_info": {
+          "package_name": "com.example.animationdemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi1CKgYB6EiJivPaA84uwLSh9o2a1LKhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
