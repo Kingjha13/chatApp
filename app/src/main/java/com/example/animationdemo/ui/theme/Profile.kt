@@ -42,9 +42,8 @@ fun Profiles(
                 .border(3.dp, Color(0xFF0097A7), CircleShape)
                 .padding(4.dp)
         ) {
-            // Use a default image here (for simplicity), and ensure it fits inside the circle
             Image(
-                painter = painterResource(id = R.drawable.whatsapp_image_2025_03_09_at_17_44_59_5ae49117),
+                painter = painterResource(id = R.drawable.whatsapp_image_2024_12_29_at_10_39_31_8e3afc8b),
                 contentDescription = "Profile Image",
                 modifier = Modifier
                     .fillMaxSize()
@@ -54,13 +53,12 @@ fun Profiles(
         Spacer(modifier = Modifier.height(20.dp))
 
         Text(
-            text = "supriya",
+            text = "Avanish",
             style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
             color = Color.Black
         )
         Spacer(modifier = Modifier.height(10.dp))
         TextButton(onClick = {
-            //authViewModel.signout()
             navController.navigate("friend")
         }) {
             Text(text = "Connect with Your Special People", color = Color.Blue)

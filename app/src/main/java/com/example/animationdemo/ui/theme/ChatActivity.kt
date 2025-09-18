@@ -208,7 +208,7 @@ fun ChatScreen(
                             val message = ChatMessage(
                                 id = messagesCollection.document().id,
                                 message = messageText,
-                                senderId = userName
+                                senderId = userName,
                             )
                             messagesCollection.document(message.id).set(message)
                             messageText = ""
@@ -217,7 +217,7 @@ fun ChatScreen(
                                 navController.context, "Message cannot be empty", Toast.LENGTH_SHORT
                             ).show()
                         }
-                        keyboardController?.hide() // Hide keyboard after pressing Done
+                        keyboardController?.hide()
                     }
                 ),
                 keyboardOptions = KeyboardOptions.Default.copy(

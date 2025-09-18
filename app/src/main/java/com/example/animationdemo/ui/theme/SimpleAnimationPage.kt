@@ -135,11 +135,10 @@ fun SimpleAnimationPage(modifier: Modifier = Modifier, navController: NavHostCon
             modifier = Modifier
                 .weight(1f)
         ) {
-            // Change the image based on click count
             val imageResource = if (clickCount >= 10) {
-                R.drawable.motu_pic
+                R.drawable.whatsapp_image_2024_12_29_at_10_39_31_8e3afc8b
             } else {
-                R.drawable.whatsapp_image_2025_03_09_at_17_44_59_5ae49117 // Default image
+                R.drawable.whatsapp_image_2024_12_29_at_10_39_31_8e3afc8b
             }
 
             Image(
