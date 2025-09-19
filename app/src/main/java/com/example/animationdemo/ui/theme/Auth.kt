@@ -59,10 +59,8 @@ class AuthViewModel : ViewModel() {
                 if (task.isSuccessful){
                     auth.currentUser?.updateProfile(
                         com.google.firebase.auth.UserProfileChangeRequest.Builder()
-//                            .setDisplayName(username)
                             .build())
                     _authState.value = com.example.animationdemo.ui.theme.AuthState.Authenticated
-//                    _username.value = username
                 }else{
                     _authState.value = com.example.animationdemo.ui.theme.AuthState.Error(task.exception?.message?:"Something went wrong")
                 }

@@ -47,12 +47,10 @@ fun CallPhoneScreen(
                     Manifest.permission.CALL_PHONE
                 ) == PackageManager.PERMISSION_GRANTED
             ) {
-                // Create an intent to initiate a phone call
                 val phoneIntent = Intent(Intent.ACTION_CALL)
                 phoneIntent.data = Uri.parse("tel:$phoneNumber")
                 context.startActivity(phoneIntent)
             } else {
-                // Request permission if not granted
                 requestCallPermission(context)
             }
         } else {
@@ -60,12 +58,10 @@ fun CallPhoneScreen(
         }
     }
 
-    // UI Layout
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-       // horizontalAlignment = LineHeightStyle.Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Text(
@@ -93,7 +89,6 @@ fun CallPhoneScreen(
         }
     }
 }
-// Request permission for CALL_PHONE if not granted
 private fun requestCallPermission(context: Context) {
     val CALL_PHONE_PERMISSION_CODE = 100
     ActivityCompat.requestPermissions(

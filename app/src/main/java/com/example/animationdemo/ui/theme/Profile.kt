@@ -26,7 +26,6 @@ fun Profiles(
     modifier: Modifier, navController: NavHostController,
     authViewModel: AuthViewModel,userName:String
 ) {
-    //var name by remember { mutableStateOf("Supriya") }
     var bio by remember { mutableStateOf("See your bio.") }
 
     Column(

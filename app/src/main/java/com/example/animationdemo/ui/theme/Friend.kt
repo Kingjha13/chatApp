@@ -55,7 +55,7 @@ fun Friend(navController:    NavHostController,authViewModel: AuthViewModel) {
                 .padding(horizontal = 16.dp)
                 .height(50.dp), // Adjust button height
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF0097A7)),
-            shape = MaterialTheme.shapes.medium // Rounded corners
+            shape = MaterialTheme.shapes.medium
         ) {
             Text(
                 text = "Listen to Music Together",
@@ -72,9 +72,9 @@ fun Friend(navController:    NavHostController,authViewModel: AuthViewModel) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
-                .height(50.dp), // Adjust button height
+                .height(50.dp),
             colors = ButtonDefaults.buttonColors(containerColor =Color(0xFF8A2BE2)),
-            shape = MaterialTheme.shapes.medium // Rounded corners
+            shape = MaterialTheme.shapes.medium
         ) {
             Text(
                 text = "Simple Call",
@@ -85,7 +85,6 @@ fun Friend(navController:    NavHostController,authViewModel: AuthViewModel) {
         Spacer(modifier = Modifier.height(20.dp))
         Button(
             onClick = {
-                //navController.navigate("call")
             },
             modifier = Modifier
                 .fillMaxWidth()
@@ -110,9 +109,9 @@ fun Friend(navController:    NavHostController,authViewModel: AuthViewModel) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
-                .height(50.dp), // Adjust button height
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00C853)), // Green color for "Chat Now"
-            shape = MaterialTheme.shapes.medium // Rounded corners
+                .height(50.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00C853)),
+            shape = MaterialTheme.shapes.medium
         ) {
             Text(
                 text = "Start Chat Now",

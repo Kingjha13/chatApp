@@ -52,7 +52,6 @@ fun Videos(videoUrl: String,modifier: Modifier = Modifier, navController: NavHos
             override fun onDataChange(snapshot: DataSnapshot) {
                 val fetchedUrl = snapshot.getValue(String::class.java)
                 if (fetchedUrl != null) {
-                    // Update the video URL state with the Firebase value
                     videoUrl = fetchedUrl
                 } else {
                     Toast.makeText(context, "No video URL found", Toast.LENGTH_SHORT).show()
@@ -65,7 +64,6 @@ fun Videos(videoUrl: String,modifier: Modifier = Modifier, navController: NavHos
         })
     }
 
-    // When the video URL is fetched, initialize ExoPlayer with the URL
     videoUrl?.let {
         LaunchedEffect(it) {
             initializeExoplayerView(exoPlayer, playerView, it)
@@ -121,7 +119,6 @@ fun Videos(videoUrl: String,modifier: Modifier = Modifier, navController: NavHos
         },
         modifier = modifier
     )
-    // Clean up ExoPlayer when composable is disposed
     DisposableEffect(Unit) {
         onDispose {
             exoPlayer.release()
@@ -130,7 +127,6 @@ fun Videos(videoUrl: String,modifier: Modifier = Modifier, navController: NavHos
     }
 }
 
-// Function to initialize ExoPlayer with a media URL
 @androidx.annotation.OptIn(UnstableApi::class)
 @OptIn(UnstableApi::class)
 private fun initializeExoplayerView(
@@ -140,25 +136,23 @@ private fun initializeExoplayerView(
 ) {
     try {
         Log.d("ExoPlayer", "Initializing ExoPlayer with URL: $videoUrl")
-
-        // Create a MediaItem from the video URL
         val mediaItem = MediaItem.fromUri(videoUrl.toUri())
 
-        // Create an HTTP DataSource
+
         val dataSourceFactory = DefaultHttpDataSource.Factory()
 
-        // Create a MediaSource using the media item and data source factory
+
         val mediaSource = DefaultMediaSourceFactory(dataSourceFactory)
             .createMediaSource(mediaItem)
 
-        // Set up the PlayerView with the ExoPlayer
+
         playerView.player = exoPlayer
 
-        // Prepare the ExoPlayer with the media source
+
         exoPlayer.setMediaSource(mediaSource)
         exoPlayer.prepare()
 
-        // Start playing the video
+
         exoPlayer.playWhenReady = true
 
         Log.d("ExoPlayer", "Player setup complete")

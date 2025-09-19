@@ -55,7 +55,7 @@ fun ReelScreen(modifier: Modifier = Modifier, navController: NavHostController) 
             override fun onDataChange(snapshot: DataSnapshot) {
                 val fetchedUrl = snapshot.getValue(String::class.java)
                 if (fetchedUrl != null) {
-                    // Update the video URL state with the Firebase value
+
                     videoUrl = fetchedUrl
                 } else {
                     Toast.makeText(context, "No video URL found", Toast.LENGTH_SHORT).show()
@@ -117,7 +117,7 @@ fun ReelScreen(modifier: Modifier = Modifier, navController: NavHostController) 
     }
 }
 
-// Function to initialize ExoPlayer with a media URL
+
 @androidx.annotation.OptIn(UnstableApi::class)
 @OptIn(UnstableApi::class)
 private fun initializeExoplayerView(
@@ -130,17 +130,17 @@ private fun initializeExoplayerView(
 
         val mediaItem = MediaItem.fromUri(videoUrl.toUri())
 
-        // Create an HTTP DataSource
+
         val dataSourceFactory = DefaultHttpDataSource.Factory()
 
-        // Create a MediaSource using the media item and data source factory
+
         val mediaSource = DefaultMediaSourceFactory(dataSourceFactory)
             .createMediaSource(mediaItem)
 
-        // Set up the PlayerView with the ExoPlayer
+
         playerView.player = exoPlayer
 
-        // Prepare the ExoPlayer with the media source
+
         exoPlayer.setMediaSource(mediaSource)
         exoPlayer.prepare()
 

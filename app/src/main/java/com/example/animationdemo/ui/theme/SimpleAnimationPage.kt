@@ -51,7 +51,6 @@ fun SimpleAnimationPage(modifier: Modifier = Modifier, navController: NavHostCon
         mutableStateOf(false)
     }
 
-    // Click counter
     var clickCount by remember { mutableStateOf(0) }
     var showMessage by remember { mutableStateOf(false) }
     LaunchedEffect(key1 = animateAgain) {
@@ -66,7 +65,6 @@ fun SimpleAnimationPage(modifier: Modifier = Modifier, navController: NavHostCon
         )
     }
 
-    // Increment click counter when button is pressed
     val onButtonClick = {
         clickCount++
         if (clickCount >= 10) {
@@ -74,16 +72,16 @@ fun SimpleAnimationPage(modifier: Modifier = Modifier, navController: NavHostCon
         } else {
             showMessage = false
 
-            // Show "No" for 1 second when click count is less than 10
+
             GlobalScope.launch {
-                showMessage = true // Show the "No" message
-                delay(1000) // Wait for 1 second
-                showMessage = false // Hide the "No" message after 1 second
+                showMessage = true
+                delay(1000)
+                showMessage = false
             }
         }
 
         GlobalScope.launch {
-            scale.snapTo(2f) // Reset scale before starting the animation
+            scale.snapTo(2f)
         }
         animateAgain = !animateAgain
     }
@@ -152,12 +150,11 @@ fun SimpleAnimationPage(modifier: Modifier = Modifier, navController: NavHostCon
                 contentDescription = "logo"
             )
 
-            // Show message inside the image when the counter reaches 10
             if (clickCount >= 10) {
                 Box(
                     modifier = Modifier
                         .align(Alignment.BottomEnd)
-                        .background(Color(0xFF003202)) // Semi-transparent background
+                        .background(Color(0xFF003202))
                         .padding(10.dp)
                 ) {
                     Text(
@@ -183,8 +180,8 @@ fun SimpleAnimationPage(modifier: Modifier = Modifier, navController: NavHostCon
         Button(
             onClick = onButtonClick,
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF003366), // Set the background color
-                contentColor = Color.White // Set the text color to white
+                containerColor = Color(0xFF003366),
+                contentColor = Color.White
             )
         ) {
             Text(text = "Please motu maf kar do", color = Color.White)
