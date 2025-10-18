@@ -199,7 +199,7 @@ fun ChatScreen(
                 modifier = Modifier
                     .weight(1f)
                     .padding(vertical = 8.dp).padding(start = 0.dp)
-                    .padding(16.dp),
+                    .padding(19.dp),
                 shape = MaterialTheme.shapes.medium,
                 placeholder = { Text(text = "Type a message...") },
                 keyboardActions = KeyboardActions(
@@ -221,7 +221,7 @@ fun ChatScreen(
                     }
                 ),
                 keyboardOptions = KeyboardOptions.Default.copy(
-                    imeAction = ImeAction.Done // This tells the system to show the "Done" button on the keyboard
+                    imeAction = ImeAction.Done
                 )
             )
             Button(

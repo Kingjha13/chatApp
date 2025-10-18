@@ -143,7 +143,6 @@ private fun initializeExoplayerView(
 
         exoPlayer.setMediaSource(mediaSource)
         exoPlayer.prepare()
-
         Log.d("ExoPlayer", "Player setup complete")
     } catch (e: Exception) {
         Log.e("ExoPlayer", "Error initializing ExoPlayer: $e")
