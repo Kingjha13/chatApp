@@ -62,7 +62,7 @@ fun ChatMain(modifier: Modifier = Modifier, navController: NavHostController, au
 
             Button(
                 onClick = {
-                    if (name.isNotEmpty() && tit == "jha") {
+                    if (name.isNotEmpty() && tit == "avanish") {
                         navController.navigate("chat_screen/$name")
                     } else {
                         Log.e("ChatMain", "Something went wrong: Invalid name or title")
