@@ -32,7 +32,7 @@ import androidx.compose.ui.graphics.Color
 
 @Composable
 fun Call() {
-    val phoneNumber = "8084705232"
+    val phoneNumber = "you can write any contact number here"
     val context = LocalContext.current
 
     Column(
